@@ -1,21 +1,17 @@
-const para = document.querySelector("p");
-const input = document.querySelector("input");
-const btn = document.querySelector("button");
+const output = document.querySelector(".output");
+output.textContent = "";
 
-btn.addEventListener("click", () => {
-    para.textContent = "Output : ";
-    const num = input.value;
-    input.value = "";
-    input.focus();
-    for (let i = 1; i <= num; i++) {
-        console.log(`Iterasi ke ${i}`);
-        let sqRoot = Math.sqrt(i);
-        let sqRootRounded = Math.floor(sqRoot);
-        console.log(`hasil akar : ${sqRoot}`);
-        console.log(`pembualatan hasil akar : ${sqRootRounded}`);
-        if (Math.floor(sqRoot) !== sqRoot) {
-            continue;
-        }
-        para.textContent += ` ${i}`;
+let i = 10;
+
+while (i>=0) {
+    const para = document.createElement('p');
+    if (i === 10) {
+        para.textContent = `Countdown ${i}`;
+    } else if (i === 0) {
+        para.textContent = "Blast Off!";
+    } else {
+        para.textContent = i;
     }
-});
+    output.appendChild(para);
+    i--;
+}
