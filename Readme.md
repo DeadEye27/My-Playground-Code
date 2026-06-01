@@ -1,3 +1,3 @@
 # Ini adalah repo sandbox
 
-## isinya random
+## isinya latihan dan percobaan untuk kurikulum the odin project
