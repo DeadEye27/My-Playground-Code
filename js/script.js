@@ -1,17 +1,27 @@
-const output = document.querySelector(".output");
-output.textContent = "";
+const people = [
+  "Chris",
+  "Anne",
+  "Colin",
+  "Terri",
+  "Phil",
+  "Lola",
+  "Sam",
+  "Kay",
+  "Bruce",
+];
 
-let i = 10;
+const admitted = document.querySelector(".admitted");
+const refused = document.querySelector(".refused");
+admitted.textContent = "Admit: ";
+refused.textContent = "Refuse: ";
 
-while (i>=0) {
-    const para = document.createElement('p');
-    if (i === 10) {
-        para.textContent = `Countdown ${i}`;
-    } else if (i === 0) {
-        para.textContent = "Blast Off!";
+for (const person of people) {
+    if (person === "Phil" || person === "Lola") {
+        refused.textContent += `${person}, `;
     } else {
-        para.textContent = i;
+        admitted.textContent += `${person}, `;
     }
-    output.appendChild(para);
-    i--;
 }
+
+refused.textContent = `${refused.textContent.slice(0, -2)}.`;
+admitted.textContent = `${admitted.textContent.slice(0, -2)}.`;
